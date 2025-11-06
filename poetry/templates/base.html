@@ -1,16 +1,31 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %} {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
   <body>
-    <header>
-      <nav>
+    <header class="header">
+      <!-- logo -->
+      <div class="logo">
         <a href="/">Poetry Hub Platform</a>
+      </div>
+      <!-- Навигация -->
+      <nav class="nav">
         <a href="{% url 'poem_create' %}">Добавить произведение</a>
       </nav>
+      <!-- Вход выход, регистрация -->
+      <div class="auth">
+        <a href="">Войти</a>
+        <form method="Post">
+          {% csrf_token %}
+          <button type="submit">Выйти</button>
+        </form>
+      </div>
     </header>
     <!--  -->
     {% block content %} {% endblock content%}
