@@ -1,0 +1,26 @@
+<svg width="180" height="50" viewBox="0 0 180 50" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#667eea"/>
+            <stop offset="100%" stop-color="#764ba2"/>
+        </linearGradient>
+    </defs>
+
+    <style>
+        .text { font-family: 'Arial', sans-serif; font-weight: bold; }
+        .poetry { fill: #f2f; }
+        .hub { fill: #ffffff; }
+        .platform { fill: #ffffff; }
+    </style>
+
+    <!-- Компактные волны -->
+    <path d="M5 25 Q15 18 25 25 Q35 32 45 25 Q55 18 65 25 Q75 32 85 25 Q95 18 105 25"
+          stroke="url(#waveGrad)" stroke-width="2.5" fill="none"/>
+    <path d="M8 28 Q18 21 28 28 Q38 35 48 28 Q58 21 68 28 Q78 35 88 28 Q98 21 108 28"
+          stroke="url(#waveGrad)" stroke-width="1.5" fill="none" opacity="0.7"/>
+
+    <!-- Текст -->
+    <text class="text poetry" x="115" y="20" font-size="16">POETRY</text>
+    <text class="text hub" x="115" y="35" font-size="14">HUB</text>
+    <text class="text platform" x="115" y="47" font-size="12">PLATFORM</text>
+</svg>
