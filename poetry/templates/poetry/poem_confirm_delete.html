@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+<!--  -->
+{% block title %} Подтверждение удаления {% endblock title %}
+<!--  -->
+
+{% block content %}
+<h1>Подтверждение удаления</h1>
+
+<form method="POST">
+  {% csrf_token %} {{ form.as_p }}
+  <p>Подтверждаете удаление "{{object.title}}" ?</p>
+  <button type="submit">Удалить</button>
+</form>
+
+{% endblock content %}

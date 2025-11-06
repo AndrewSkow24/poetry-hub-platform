@@ -1,8 +1,23 @@
-from django.views.generic import ListView, DetailView
+from django.urls import reverse_lazy
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView,
+    DeleteView,
+)
 from .models import Poem
 
 
 # Create
+class PoemCreateView(CreateView):
+    model = Poem
+    fields = [
+        "title",
+        "body",
+        "author",
+    ]
+    success_url = reverse_lazy("poem_list")
 
 
 # Read (list, detail)
@@ -18,5 +33,16 @@ class PoemDetailView(DetailView):
 
 
 # Update
+class PoemUpdateView(UpdateView):
+    model = Poem
+    fields = [
+        "title",
+        "body",
+        "author",
+    ]
+
 
 # Delete
+class PoemDeleteView(DeleteView):
+    model = Poem
+    success_url = reverse_lazy("poem_list")

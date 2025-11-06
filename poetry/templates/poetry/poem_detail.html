@@ -6,10 +6,14 @@
 
 <div class="poem-card">
   <h1>{{ poem.title }}</h1>
-  <p>{{ poem.body }}</p>
+  <p>{{ poem.body|linebreaks }}</p>
   <p>{{ poem.author }}</p>
   <p>Нравится: {{ poem.likes }}</p>
   <p>{{ poem.created_at }}</p>
+  <p>
+    <a href="{% url 'poem_edit' poem.pk %}">Редактировать</a>
+    <a href="{% url 'poem_delete' poem.pk %}">Удалить</a>
+  </p>
 </div>
 
 {% endblock content %}
