@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+<!--  -->
+{% block title %} {{ poem.title }} {% endblock title %}
+<!--  -->
+{% block content %}
+
+<div class="poem-card">
+  <h1>{{ poem.title }}</h1>
+  <p>{{ poem.body }}</p>
+  <p>{{ poem.author }}</p>
+  <p>Нравится: {{ poem.likes }}</p>
+  <p>{{ poem.created_at }}</p>
+</div>
+
+{% endblock content %}

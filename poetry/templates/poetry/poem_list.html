@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+<!--  -->
+{% block title %} Все произведения {% endblock title %}
+<!--  -->
+
+<!--  -->
+{% block content %}
+<!--  -->
+<h1>Все произведения</h1>
+
+<div class="poems-list">
+  {% for poem in poems %}
+
+  <li>
+    <a href="{% url 'poem_detail' poem.pk %}"> {{ poem.title }} </a>
+
+    ( {{ poem.author }}, {{ poem.created_at }} )
+  </li>
+  {% endfor %}
+</div>
+<!--  -->
+{% endblock content %}
