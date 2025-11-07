@@ -21,16 +21,25 @@
         <a href="{% url 'poem_create' %}">Добавить произведение</a>
       </nav>
       <!-- Вход выход, регистрация -->
+      {% if not user.is_authenticated %}
       <div class="auth">
-        <a href="">Войти</a>
-        <form method="Post">
+        <a href="{% url 'login' %}">
+          <button class="login-button">Войти</button>
+        </a>
+        <!-- Регистрация -->
+        <a href="">
+          <button class="login-button">Регистрация</button>
+        </a>
+        {% else %}
+        <form method="POST" action="{% url 'logout' %}">
           {% csrf_token %}
-          <button type="submit">Выйти</button>
+          <button type="submit" class="login-button">Выйти</button>
         </form>
+        {% endif %}
       </div>
     </header>
     <!--  -->
-    {% block content %} {% endblock content%}
+    <div class="body-container">{% block content %} {% endblock content%}</div>
     <!--  -->
   </body>
 </html>
